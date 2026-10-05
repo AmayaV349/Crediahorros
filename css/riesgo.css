@@ -1,0 +1,139 @@
+:root{
+	--main-color-naranja:#F29100;
+	--main-color-verde:#43B183;
+    --main-color-verde-claro:#64b997;
+  --main-color-azul-oscuro:#24195D;
+  --blanco:white;
+  --negro:black;
+}
+/* PRIMER PARRAFO  */
+/* Estilos para la sección de texto de riesgos */
+.seccion-texto-riesgos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ffffff; /* Fondo blanco */
+  }
+  
+  .contenedor-texto-riesgos {
+    max-width: 1000px;
+    line-height: 1.8; /* Espaciado entre líneas */
+    color: #333333; /* Color del texto */
+    text-align: justify; /* Justifica el texto */
+  }
+  
+  .contenedor-texto-riesgos p {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+  .encabezado-riesgos-cooperativa h2 {
+    font-size: 3.9rem;
+    font-weight: bold;
+    color: var(--main-color-azul-oscuro); /* Azul oscuro */
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .encabezado-riesgos-cooperativa .texto-destacado-riesgos {
+    color: var(--main-color-verde); /* Verde brillante */
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .contenedor-texto-riesgos {
+      padding: 0 10px;
+    }
+  
+    .contenedor-texto-riesgos p {
+      font-size: 1rem; /* Reduce el tamaño del texto en dispositivos pequeños */
+    }
+  }
+  
+  /* ACORDEON DESPLEGABLE */
+
+  /* Variables de color */
+:root {
+    --color-principal: #2D9CDB;
+    --color-secundario: #f8f9fa;
+    --color-texto: #212529;
+    --color-hover: #1F78C1;
+    --color-border: #E0E0E0;
+    --color-footer: #343a40;
+  }
+  
+  /* Reset de estilos básicos */
+  section {
+    padding: 20px;
+  }
+  
+  /* Estilos del acordeón */
+  .accordion-container {
+    max-width: 999px;
+    margin: 20px auto;
+  }
+  
+  .accordion-btn {
+    background-color: var(--main-color-verde);
+    color: white;
+    padding: 16px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 85%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordion-btn:hover {
+    background-color: var(--main-color-verde-claro);
+  }
+  
+  .accordion-btn:after {
+    content: '\002B'; /* Signo de más */
+    font-size: 22px;
+    color: white;
+  }
+  
+  .accordion-btn.active:after {
+    content: '\2212'; /* Signo de menos */
+  }
+  
+  .accordion-panel {
+    padding: 0 20px;
+    background-color: var(--color-secundario);
+    border-left: 4px solid var(--main-color-naranja);
+    display: none;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 10px;
+  }
+  
+  .accordion-panel p {
+    font-size: 16px;
+    color: var(--color-texto);
+  }
+  
+
+  /* Los paneles por defecto están ocultos */
+.accordion-panel {
+    padding: 0 20px;
+    background-color: var(--color-secundario);
+    border-left: 4px solid var(--main-color-naranja);
+    display: none; /* Panel oculto por defecto */
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Cuando el panel tiene la clase 'show', se muestra */
+  .accordion-panel.show {
+    display: block;
+  }
+
+  
+  
+  

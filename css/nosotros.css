@@ -1,0 +1,137 @@
+:root{
+	--main-color-naranja:#F29100;
+	--main-color-verde:#43B183;
+  --main-color-azul-oscuro:#24195D;
+  --blanco:white;
+  --negro:black;
+}
+
+/* LINEA DE TIEMPO */
+/* Estilos generales para la línea de tiempo */
+.timeline-horizontal {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centra los items */
+    align-items: center;
+  }
+  
+  /* Línea central */
+  .timeline-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--main-color-verde); /* Color de la línea */
+    transform: translateY(-50%); /* Centra la línea verticalmente */
+    z-index: 0; /* Asegura que la línea esté detrás de los puntos */
+  }
+  
+  /* Contenedor de cada item en la línea de tiempo */
+  .timeline-item {
+    position: relative;
+    width: 250px; /* Ancho fijo para cada item */
+    padding: 10px;
+    text-align: left;
+    background: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Asegura que los items estén sobre la línea */
+    margin: 0 10px; /* Espaciado entre los items */
+    transition: transform 0.3s ease; /* Agregar transición suave para el hover */
+  }
+  
+  /* Puntos en la línea de tiempo */
+  .timeline-dot {
+    position: absolute;
+    top: -10px; /* Ajuste de posición para los puntos */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--main-color-naranja);
+    border: 4px solid white;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  /* Contenido de cada evento */
+  .timeline-content {
+    padding: 10px;
+  }
+  
+  .timeline-content h4 {
+    background: var(--main-color-verde);
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+  
+  /* Efecto de hover para resaltar eventos */
+  .timeline-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Efecto especial para el año 2004 */
+  .timeline-item-2004 {
+    width: 280px; /* Hacer el año 2004 más grande desde el inicio */
+  }
+  
+  /* Efecto hover para todos los elementos */
+  .timeline-item:hover {
+    transform: scale(1.1); /* Expande todos los items cuando el cursor pasa sobre ellos */
+  }
+  
+  /* Animación */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .timeline-item {
+    animation: fadeInUp 0.5s ease;
+  }
+  
+  /* Media Query para pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+    .timeline-horizontal {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .timeline-item {
+      width: 80%; /* Ajustar el ancho en pantallas pequeñas */
+      margin-bottom: 20px;
+    }
+  }
+
+/* Estilos generales para las imágenes vision y mision */
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Opcional, para bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra con profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de animación */
+  }
+
+  /* Efecto hover */
+  .image-container img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Aumenta la profundidad */
+  }
+
+
+
+  

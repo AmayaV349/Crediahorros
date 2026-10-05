@@ -1,0 +1,127 @@
+:root{
+	--main-color-naranja:#EB8B2D;
+	--main-color-verde:#3CB183;
+    --main-color-azul-oscuro:#090027;
+    --fuente: "Lato", Helvetica, Arial, sans-serif;
+}
+
+.slide-unidad-seguros {
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    box-sizing: border-box;
+    position: relative; /* Asegura que la sección no interfiera con otros elementos */
+    z-index: 1;
+    background-color: #f7f7f7;
+}
+
+/* Título y subtítulo */
+.slide-unidad-seguros-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.slide-unidad-seguros-header h1 {
+    font-size: 4rem;
+    color: var(--main-color-azul-oscuro);
+    margin: 0;
+}
+
+.slide-unidad-seguros-header p {
+    font-size: 2rem;
+    color: var(--main-color-azul-oscuro);
+    margin: 10px 0 0;
+}
+
+/* Contenedor del slider */
+.slide-unidad-seguros-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Slides */
+.slide-unidad-seguros-slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide-unidad-seguros-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+.slide-unidad-seguros-item img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slide-unidad-seguros-item .text {
+    flex: 1;
+    padding: 20px;
+}
+
+.slide-unidad-seguros-item h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.slide-unidad-seguros-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Navegación manual */
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slide-unidad-seguros-slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slide-unidad-seguros-slides {
+    transform: translateX(-33.33%);
+}
+
+#slide3:checked ~ .slide-unidad-seguros-slides {
+    transform: translateX(-66.66%);
+}
+
+/* Botones de navegación */
+.slide-unidad-seguros-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2; /* Se asegura de no interferir con elementos flotantes */
+}
+
+.slide-unidad-seguros-controls label {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slide-unidad-seguros-controls label:hover,
+input[type="radio"]:checked + label {
+    background-color: #555;
+}

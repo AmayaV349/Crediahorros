@@ -1,0 +1,175 @@
+
+/* Seccion Celebraciones  */
+.fiestas-section {
+    padding: 40px 0;
+}
+
+.fiestas-title {
+    margin-left: 40px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    padding-bottom: initial;
+}
+
+/* CONTENEDOR DEL CARRUSEL */
+.fiestas-carousel-container {
+    position: relative;
+    padding: 20px 0 40px 0;
+}
+
+/* PISTA */
+.fiestas-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  overflow-x: auto;              /* obligatorio */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding: 0 50px;
+  z-index: 1;
+}
+
+/* Oculta scrollbar pero deja scroll funcional */
+.fiestas-carousel-track::-webkit-scrollbar { display: none; }
+.fiestas-carousel-track { scrollbar-width: none; } /* firefox */
+
+
+/* ETIQUETAS */
+.fiestas-label {
+    min-width: 160px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 14px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.85;
+    border-left: 4px solid;
+}
+
+.fiestas-label-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.fiestas-label-halloween {
+    border-color: #D35400;
+}
+
+.fiestas-label-navidad {
+    border-color: #C62828;
+}
+
+/* TARJETAS */
+.fiestas-card {
+    min-width: 360px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fiestas-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.30);
+}
+
+.fiestas-card-title {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+}
+
+
+/* BOTONES: por encima y clickeables */
+.fiestas-btn-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;              
+  pointer-events: auto;       /* por si algún estilo global lo deshabilita */
+  background: rgba(0,0,0,0.18);
+  color: white;
+  font-size: 20px;
+  transition: background 0.2s;
+}
+
+.fiestas-btn-arrow:hover {
+    background: rgba(0,0,0,0.28);
+}
+
+.fiestas-btn-left { left: 10px; }
+.fiestas-btn-right { right: 10px; }
+
+/* Ajustes móviles */
+@media (max-width: 768px) {
+  .fiestas-card { min-width: 220px; height: 160px; }
+  .fiestas-btn-arrow { width: 36px; height: 36px; font-size: 18px; }
+}
+
+/* Imagenes Celular */
+/* Imagen normal para PC (ya la tienes por data-slide-bg) */
+
+/* Cambiar fondo SOLO en móvil */
+@media (max-width: 768px) {
+  .swiper-slide[data-slide-bg="images/images-crediahorros/bannerCurso.png"] {
+    background-image: url("../images/images-crediahorros/bannerCurso-movil.png") !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide[data-slide-bg="images/images-crediahorros/bannerSemilla.png"] {
+    background-image: url("../images/images-crediahorros/bannerSemilla-movil.png") !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide[data-slide-bg="images/images-crediahorros/bannerRentadiario.png"] {
+    background-image: url("../images/images-crediahorros/bannerRentadiario-movil.png") !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide[data-slide-bg="images/images-crediahorros/bannerRedes.png"] {
+    background-image: url("../images/images-crediahorros/bannerRedes-movil.png") !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide[data-slide-bg="images/images-crediahorros/bannerBeneficio.png"] {
+    background-image: url("../images/images-crediahorros/bannerBeneficio-movil.png") !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide[data-slide-bg="images/images-crediahorros/bannerHorario.png"] {
+    background-image: url("../images/images-crediahorros/bannerHorario-movil.png") !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide[data-slide-bg="images/images-crediahorros/bannerApp.png"] {
+    background-image: url("../images/images-crediahorros/bannerApp-movil.png") !important;
+    background-size: cover;
+    background-position: center;
+  }
+}

@@ -1,0 +1,223 @@
+:root{
+	--main-color-naranja:#F29100;
+	--main-color-verde:#43B183;
+    --main-color-verde-claro:#64b997;
+  --main-color-azul-oscuro:#24195D;
+  --blanco:white;
+  --negro:black;
+}
+
+/* LOS 3 TIPOS DE CUENTAS */
+
+/* Contenedor general de las cuentas */
+/* Contenedor general de las cuentas */
+.cuentas .container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la sección */
+.cuentas h2 {
+    text-align: center;
+    font-size: 3.9rem;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: var(--main-color-azul-oscuro); /* Azul oscuro */
+    padding-top: 50px;
+}
+
+/* Contenedor de las tarjetas de cuentas */
+.cuentas .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 60px;
+}
+
+/* Estilo para cada tarjeta de cuenta */
+.cuentas .card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    height: 300px;
+}
+
+.cuentas .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado de la tarjeta (nombre de la cuenta) */
+.cuentas .card-header {
+    background-color: var(--main-color-verde);
+    color: #fff;
+    font-size: 1.3em;
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    text-align: center;
+}
+
+/* Contenido de la tarjeta (descripcion) */
+.cuentas .card-content {
+    margin-top: 80px;
+    font-size: 1em;
+    color: var(--main-color-azul-oscuro);
+    padding: 15px 10px;
+}
+
+/* Pie de la tarjeta (botón) */
+.cuentas .card-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo del botón */
+.cuentas .btn {
+    padding: 10px 25px;
+    background-color: var(--main-color-verde);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cuentas .btn:hover {
+    background-color: var(--main-color-verde);
+    transform: translateY(-3px);
+}
+
+/* Contenedor de los requisitos */
+.cuentas .requirements-container {
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo de los cuadros de requisitos */
+.cuentas .requirements {
+    display: none;
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--main-color-naranja);
+    text-align: left;
+    color: var(--main-color-azul-oscuro);
+    font-size: 1.1em;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Espacio adicional cuando los requisitos están visibles */
+.cuentas .requirements.visible {
+    display: block;
+    margin-bottom: 40px; /* Espacio debajo de los requisitos */
+}
+
+.cuentas .requirements h3 {
+    margin-top: 0;
+    font-size: 3rem;
+    padding: 10px;
+}
+
+/* SECTION DE CDTA */
+.cdat-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+}
+
+.cdat-table-container {
+    width: 95%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.cdat-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--main-color-azul-oscuro);
+}
+.cdat-title  span {
+    color: var(--main-color-verde); /* Verde destacado */
+}
+
+.cdat-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.cdat-table thead {
+    background-color: var(--main-color-verde);
+    color: white;
+}
+
+.cdat-table th, 
+.cdat-table td {
+    padding: 15px;
+    font-size:18px;
+    border-bottom: 1px solid #ddd;
+    color: var(--main-color-azul-oscuro);
+}
+
+.cdat-table th {
+    font-size: 20px;
+    color: white;
+}
+
+.cdat-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.cdat-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    .cdat-table th, 
+    .cdat-table td {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .cdat-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cdat-table th, 
+    .cdat-table td {
+        font-size: 11px;
+        padding: 8px;
+    }
+    .cdat-title {
+        font-size: 18px;
+    }
+}

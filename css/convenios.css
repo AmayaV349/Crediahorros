@@ -1,0 +1,167 @@
+:root{
+	--main-color-naranja:#F29100;
+	--main-color-verde:#43B183;
+    --main-color-azul-oscuro:#24195D;
+    --fuente: "Lato", Helvetica, Arial, sans-serif;
+}
+/* DISEÑO PARA EL MENU EN CASCADA DE LOS CONVENIOS */
+.desplegable-contenedor {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    font-family:var(--fuente); /* Cambia 'Arial' por tu tipo de letra */
+}
+
+/* Estilos para los detalles desplegables */
+.desplegable-details {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f4f8;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.desplegable-details:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #e9ecef;
+}
+
+/* Estilo del resumen del detalle */
+.desplegable-summary {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333333;
+    position: relative;
+    user-select: none;
+}
+
+/* Flecha indicadora */
+.desplegable-summary::before {
+    content: '\25BE';
+    position: absolute;
+    right: 15px;
+    font-size: 1.5em;
+    color: #888888;
+    transition: transform 0.3s ease;
+}
+
+.desplegable-details[open] .desplegable-summary::before {
+    transform: rotate(180deg);
+}
+
+/* Estilos de la galería de imágenes */
+.desplegable-imagenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 20px;
+    margin: 15px 0;
+    padding: 15px;
+    border-top: 2px solid #ddd;
+    background-color: #ffffff;
+}
+
+/* Estilo de cada imagen */
+.desplegable-imagen {
+    width: 100%;
+    height: 190px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: cover;
+}
+
+.desplegable-imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.titulo-convenios {
+    text-align: left; /* Centra el texto */
+    padding-left: 84px;
+    color: var(--main-color-azul-oscuro); /* Color del título */
+    font-size: 1.8em; /* Tamaño del título */
+    margin: 30px ; /* Espacio encima y debajo del título */
+}
+.contenedor-convenios {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    padding: 20px;
+    /* align-items: center; */
+}
+.desplegable-contenedor {
+    display: flex;
+    flex-direction: row; /* Mantener en fila en pantallas grandes */
+    align-items: flex-start; /* Alinear al inicio */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-alusiva {
+    width: 40%; /* Ajustar el ancho de la imagen */
+    max-width: 300px; /* Limitar el ancho máximo */
+    border-radius: 10px;
+    margin-right: 20px; /* Espacio entre la imagen y el contenido */
+}
+
+.contenido-desplegable {
+    flex: 1; /* Permitir que el contenido ocupe el espacio restante */
+}
+
+@media (max-width: 768px) {
+    .desplegable-contenedor {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrando el contenido */
+    }
+
+    .imagen-alusiva {
+        width: 90%; /* Ajustar el ancho en pantallas pequeñas */
+        margin-right: 0; /* Quitar margen en pantallas pequeñas */
+        margin-bottom: 20px; /* Añadir espacio debajo en pantallas pequeñas */
+    }
+}
+
+.desplegable-imagenes {
+    display: flex; /* Muestra las imágenes en fila */
+    justify-content: center; /* Centra las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en pantallas pequeñas */
+}
+
+.imagen-con-boton {
+    position: relative; /* Para posicionar el botón */
+    margin: 10px; /* Espacio entre las imágenes */
+}
+
+.telefono-boton {
+    position: absolute;
+    bottom: 5px; /* Espacio desde la parte inferior de la imagen */
+    left: 50%; /* Centra el botón horizontalmente */
+    transform: translateX(-50%); /* Ajusta el botón para que esté centrado */
+    background-color: var(--main-color-verde); /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    font-size: 0.9em; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    display: none; /* Oculta el botón por defecto */
+}
+
+.imagen-con-boton:hover .telefono-boton {
+    display: block; /* Muestra el botón al pasar el cursor sobre la imagen */
+}
+

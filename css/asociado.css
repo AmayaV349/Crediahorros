@@ -1,0 +1,542 @@
+:root{
+	--main-color-naranja:#F29100;
+	--main-color-verde:#43B183;
+    --main-color-azul-oscuro:#24195D;
+    --fuente: "Lato", Helvetica, Arial, sans-serif;
+}
+/* PASOS PARA AFILIARSE A LA COOPERATIVA */
+.cooperativa-section {
+  background-color: white;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cooperativa-section h2 {
+  font-size: 4.5rem;
+  margin-bottom: 30px;
+}
+
+.cooperativa-section .highlight {
+  color: var(--main-color-verde); /* Color verde llamativo */
+  font-weight: bold;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 75px;
+  flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+}
+
+.step {
+  background-color: #585858;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.5s ease-in-out forwards;
+  margin-bottom: 20px; /* Espaciado entre filas en pantallas pequeñas */
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.step:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.step:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.step:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.circle {
+  background-color: var(--main-color-verde);
+  color: #fff;
+  font-size: 1.8rem;
+  width: 70px;
+  height: 70px;
+  line-height: 50px;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle i {
+  font-size: 2.4rem; /* Tamaño del ícono */
+  position: absolute;
+  top: 20px;
+}
+
+.circle span {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-top: 40px;
+  position: absolute;
+}
+
+.step p i {
+  color: white;
+  margin-right: 8px;
+  font-size: 1.2rem; /* Tamaño de los íconos en texto */
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .steps {
+      flex-direction: column; /* Acomoda las tarjetas en una sola columna */
+      gap: 20px; /* Reduce el espacio entre elementos */
+  }
+
+  .step {
+      width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+      margin: 0 auto; /* Centra las tarjetas */
+  }
+
+  .cooperativa-section h2 {
+      font-size: 3.5rem; /* Reduce el tamaño del título */
+  }
+}
+
+@media (max-width: 480px) {
+  .cooperativa-section h2 {
+      font-size: 2.5rem; /* Reduce aún más el tamaño del título */
+  }
+
+  .circle {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem; /* Reduce el tamaño de los círculos */
+  }
+
+  .circle i {
+      font-size: 2rem; /* Ajusta el tamaño del ícono dentro del círculo */
+  }
+
+  .circle span {
+      font-size: 1.5rem; /* Ajusta el texto dentro del círculo */
+  }
+}
+
+/* ESTILOS PARA TABLAS DEL VALOR DE LA INSCRIPCION  */
+.pricing-page {
+  font-family: var(--fuente);
+  background-color: #f4f4f9;
+  padding: 80px 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing-table-container .pricing-table {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pricing-table-container .card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background: #fff;
+  width: 600px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pricing-table-container .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-table-container .card h3 {
+  text-align: center;
+  color: var(--main-color-verde);
+  font-size: 4rem;
+}
+
+.pricing-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table-container th,
+.pricing-table-container td {
+  padding: 7px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #24195D;
+}
+
+.pricing-table-container tr:hover {
+  background-color: #f9f9f9;
+}
+
+.pricing-table-container .total {
+  font-weight: bold;
+  color: black;
+}
+
+.pricing-table-container .total td {
+  background: linear-gradient(90deg, var(--main-color-verde), #87bba6);
+  color: white;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+  .pricing-table-container .card {
+    width: 80%; /* Ajusta el ancho de las tarjetas */
+  }
+
+  .pricing-table-container .card h3 {
+    font-size: 3rem; /* Reduce el tamaño del título */
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-table-container {
+    gap: 30px; /* Reduce el espacio entre las tarjetas */
+  }
+
+  .pricing-table-container .card {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 0 auto; /* Centra las tarjetas */
+  }
+
+  .pricing-table-container .card h3 {
+    font-size: 2.5rem; /* Reduce aún más el tamaño del título */
+  }
+
+  .pricing-page {
+    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-table-container .card {
+    padding: 15px; /* Ajusta el padding en dispositivos muy pequeños */
+  }
+
+  .pricing-table-container th,
+  .pricing-table-container td {
+    font-size: 1.4rem; /* Reduce el tamaño de texto en la tabla */
+  }
+
+  .pricing-table-container .card h3 {
+    font-size: 2rem; /* Ajusta el tamaño del título */
+  }
+}
+
+/* ESTILOS DE DOCUMENTOS */
+.documentos-section {
+  background-color: #fff;
+  color: #24195D;
+  padding: 40px 20px;
+}
+
+.documentos-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.documentos-content {
+  flex: 0.8;
+  min-width: 300px;
+  padding-left: 60px;
+}
+
+.documentos-section h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--main-color-azul-oscuro);
+  text-align: left;
+}
+
+.documentos-section .highlight {
+  color: var(--main-color-verde); /* Color verde llamativo */
+}
+
+.documentos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.9rem;
+  line-height: 2.5;
+  text-align: center;
+}
+
+.documentos-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: var(--main-color-azul-oscuro);
+}
+
+.documentos-list li i {
+  color: var(--main-color-verde); /* Color verde llamativo */
+  font-size: 2.2rem;
+  margin-right: 10px;
+}
+
+.documentos-list .optional {
+  font-size: 1.4rem;
+  font-style: var(--fuente);
+  color: gray;
+}
+
+.documentos-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.documentos-image img {
+  max-width: 55%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.15); /* Sombra profunda */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  border-radius: 15px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .documentos-container {
+    flex-direction: column;
+  }
+
+  .documentos-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .documentos-list {
+    font-size: 1.4rem;
+  }
+
+  .documentos-list li i {
+    font-size: 1.8rem;
+  }
+}
+
+/* BENEFICIOS DE ESTAR EN CREDIAHORROS */
+.crediahorros-beneficios-section {
+ background-color: whitesmoke;
+  color: var(--main-color-azul-oscuro);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.crediahorros-beneficios-section h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.crediahorros-highlight {
+  color: var(--main-color-verde); /* Color verde llamativo */
+}
+
+.crediahorros-intro-text {
+  font-size: 1.9rem;
+  margin-bottom: 40px;
+  color: var(--main-color-azul-oscuro);
+}
+
+.crediahorros-beneficios-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.crediahorros-beneficio-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.crediahorros-beneficio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.crediahorros-beneficio-card i {
+  font-size: 3rem;
+  color: var(--main-color-verde);
+  margin-bottom: 15px;
+}
+
+.crediahorros-beneficio-card h3 {
+  font-size: 2rem;
+  color: var(--main-color-azul-oscuro);
+  margin-bottom: 10px;
+}
+
+.crediahorros-beneficio-card p {
+  font-size: 1.6rem;
+  color: var(--main-color-azul-oscuro);
+  line-height: 1.5;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .crediahorros-beneficios-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .crediahorros-beneficio-card {
+    max-width: 100%;
+  }
+
+  .crediahorros-beneficios-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* BENEFICIOS SOCIALES */
+.family-benefits-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color-azul-oscuro);
+  padding: 40px 20px;
+  gap: 70px; /* Reduce el espacio entre elementos en pantallas pequeñas */
+}
+
+.family-benefits-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: center; /* Centrar contenido para pantallas pequeñas */
+  padding-left: 0; /* Quitar el padding para pantallas pequeñas */
+}
+
+.family-benefits-content h2 {
+  font-size: 2.7rem; /* Tamaño reducido para mejor ajuste en pantallas pequeñas */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--main-color-azul-oscuro);
+}
+
+.family-benefits-content .highlight-benefits {
+  color: var(--main-color-verde); /* Verde llamativo */
+}
+
+.family-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem; /* Ajusta tamaño para mejor legibilidad en móviles */
+  line-height: 1.8;
+}
+
+.family-benefits-list li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Asegura una alineación correcta en todos los tamaños */
+  margin-bottom: 15px;
+  color: var(--main-color-azul-oscuro);
+}
+
+.family-benefits-list li i {
+  font-size: 2rem; /* Iconos más pequeños para móviles */
+  color: var(--main-color-verde); /* Verde llamativo */
+  margin-right: 10px;
+}
+
+.family-benefits-image {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.family-benefits-image img {
+  max-width: 100%; /* Asegura que la imagen no se salga en pantallas pequeñas */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+  .family-benefits-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .family-benefits-list {
+    font-size: 1.5rem;
+  }
+
+  .family-benefits-list li i {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .family-benefits-section {
+    flex-direction: column; /* Cambia a formato vertical */
+    text-align: center;
+  }
+
+  .family-benefits-content {
+    padding-left: 0; /* Sin padding para pantallas pequeñas */
+  }
+
+  .family-benefits-content h2 {
+    font-size: 2rem;
+  }
+
+  .family-benefits-list {
+    font-size: 1.4rem; /* Ajusta texto */
+  }
+
+  .family-benefits-list li i {
+    font-size: 1.6rem; /* Iconos más pequeños */
+  }
+}
+
+@media (max-width: 480px) {
+  .family-benefits-content h2 {
+    font-size: 1.8rem; /* Texto más pequeño para pantallas muy pequeñas */
+  }
+
+  .family-benefits-list {
+    font-size: 1.3rem;
+  }
+
+  .family-benefits-list li i {
+    font-size: 1.4rem;
+  }
+}

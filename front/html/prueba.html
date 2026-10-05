@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sección de Fiestas</title>
+
+<style>
+/* --- ESTILOS GENERALES --- */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+/* --- TÍTULO --- */
+.fiestas-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- CARRUSEL --- */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.fiestas-card {
+    min-width: 50%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin: 5px;
+    position: relative;
+}
+
+.fiestas-card-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0 0 12px 12px;
+}
+
+/* --- BOTONES --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.carousel-btn:hover {
+    background: #e6e6e6;
+}
+
+#prevBtn {
+    left: 10px;
+}
+#nextBtn {
+    right: 10px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .fiestas-card {
+        min-width: 100%;
+        height: 230px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h2 class="fiestas-title">🎃 Sección de Fiestas 🎄</h2>
+
+<div class="carousel-container">
+    <button id="prevBtn" class="carousel-btn">&#10094;</button>
+
+    <div class="carousel-track">
+        
+        <!-- HALLOWEEN -->
+        <div class="fiestas-card" style="background-image:url('https://picsum.photos/id/1024/800/500');">
+            <div class="fiestas-card-title">🎃 Fiesta de Halloween</div>
+        </div>
+
+        <!-- NAVIDAD -->
+        <div class="fiestas-card" style="background-image:url('https://picsum.photos/id/1011/800/500');">
+            <div class="fiestas-card-title">🎄 Fiesta de Navidad</div>
+        </div>
+
+    </div>
+
+    <button id="nextBtn" class="carousel-btn">&#10095;</button>
+</div>
+
+<script>
+/* --- LÓGICA DEL CARRUSEL --- */
+const track = document.querySelector('.carousel-track');
+const cards = document.querySelectorAll('.fiestas-card');
+
+let index = 0;
+const cardWidth = cards[0].getBoundingClientRect().width;
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (index < cards.length - 1) {
+        index++;
+    } else {
+        index = 0; 
+    }
+    moveCarousel();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+    } else {
+        index = cards.length - 1;
+    }
+    moveCarousel();
+});
+
+function moveCarousel() {
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+window.addEventListener("resize", () => {
+    moveCarousel();
+});
+</script>
+
+</body>
+</html>
